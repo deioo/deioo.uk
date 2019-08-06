@@ -9,7 +9,8 @@
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
     "lint:ci": "yarn lint --format junit -o results/eslint/result.xml",
-    "deploy:surge": "yarn build && yarn export && surge out deioo.surge.sh"
+    "deploy:surge": "yarn build && yarn export && surge out deioo.surge.sh",
+    "deploy:github": "yarn build && yarn export && node ./scripts/deploy-github"
   },
   "dependencies": {
     "babel-plugin-macros": "^2.6.1",
@@ -35,6 +36,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "eslint-plugin-react-hooks": "^1.6.0",
+    "gh-pages": "^2.1.0",
     "next-images": "^1.1.2",
     "prettier": "^1.17.0"
   },
