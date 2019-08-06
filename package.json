@@ -5,12 +5,14 @@
     "dev": "next",
     "build": "next build",
     "export": "next export",
+    "export:static-to-root": "cp -a out/static/. out/ && rm -rf out/static",
+    "build:gh": "rm -rf out && NODE_ENV=production yarn build && yarn export && yarn export:static-to-root",
     "start": "next start",
     "lint": "eslint . --ext .js,.jsx --ignore-path .gitignore",
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
     "lint:ci": "yarn lint --format junit -o results/eslint/result.xml",
     "deploy:surge": "yarn build && yarn export && surge out deioo.surge.sh",
-    "deploy:github": "yarn build && yarn export && node ./scripts/deploy-github"
+    "deploy:github": "yarn build:gh && node ./scripts/deploy-github"
   },
   "dependencies": {
     "babel-plugin-macros": "^2.6.1",
