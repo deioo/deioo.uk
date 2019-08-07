@@ -12,10 +12,7 @@
     "lint:fix": "eslint . --ext .js,.jsx --fix --ignore-path .gitignore",
     "lint:ci": "yarn lint --format junit -o results/eslint/result.xml",
     "deploy:surge": "yarn build && yarn export && surge out deioo.surge.sh",
-    "deploy:github": "yarn build:github && node ./scripts/deploy-github",
-    "analyze": "cross-env BUNDLE_ANALYZE=both next build",
-    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
-    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
+    "deploy:github": "yarn build:github && node ./scripts/deploy-github"
   },
   "dependencies": {
     "next": "latest",
@@ -42,9 +39,7 @@
     "react-helmet": "^5.2.0",
     "styled-components": "^4.2.0",
     "tailwindcss": "^1.0.2",
-    "tailwind.macro": "^1.0.0-alpha.10",
-    "@zeit/next-bundle-analyzer": "^0.1.2",
-    "cross-env": "^5.2.0"
+    "tailwind.macro": "^1.0.0-alpha.10"
   },
   "license": "ISC"
 }
