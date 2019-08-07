@@ -18,6 +18,6 @@ export const UpDown = styled.span`
   ${props =>
     props.drop
       ? upDownAnimation(props.delay || 10, props.duration || 6, 12)
-      : upDownAnimation(props.delay || 10, props.duration || 6, 4)}
+      : upDownAnimation(props.delay || 10, props.duration || 6, 3)}
   ${tw`inset-0 inline-block`};
 `
